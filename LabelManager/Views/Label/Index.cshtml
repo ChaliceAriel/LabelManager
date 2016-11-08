@@ -1,0 +1,23 @@
+﻿@*@model LabelManager.Models.Label*@
+
+
+@model LabelManager.ViewModels.CustomerOrderViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    var className = Model.Customers.Count > 0 ? "popular" : null;
+}
+
+<h3 class="address">@Model.Label.Address</h3>
+
+<p class="@className">@Model.Label.Address</p>
+
+<ul>
+    @foreach (var customer in Model.Customers)
+    {
+        <li>@customer.Name</li>
+    }
+</ul>
